@@ -1,0 +1,15 @@
+{
+  "appId": "org.firstorlando.missaomocambique",
+  "appName": "Missão Moçambique",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 1500,
+      "backgroundColor": "#041d34",
+      "showSpinner": false
+    }
+  }
+}

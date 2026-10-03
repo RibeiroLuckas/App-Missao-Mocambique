@@ -1,0 +1,244 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <!-- Background Radial Gradient: Deep Royal Navy to Midnight Blue -->
+    <radialGradient id="iconeNavyBg" cx="50%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#0a4699" />
+      <stop offset="35%" stop-color="#062e6e" />
+      <stop offset="70%" stop-color="#031a44" />
+      <stop offset="100%" stop-color="#010c22" />
+    </radialGradient>
+
+    <!-- Circular Dome Background -->
+    <radialGradient id="iconeDomeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#145bc0" stop-opacity="0.8" />
+      <stop offset="70%" stop-color="#062d6b" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#021435" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Divine Golden Light Burst behind Cross -->
+    <radialGradient id="divineLight" cx="50%" cy="45%" r="45%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="25%" stop-color="#ffea75" stop-opacity="0.9" />
+      <stop offset="55%" stop-color="#f59e0b" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Gold 3D Text Gradient for "JESUS" -->
+    <linearGradient id="jesus3DGold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="18%" stop-color="#ffea75" />
+      <stop offset="48%" stop-color="#f5b318" />
+      <stop offset="85%" stop-color="#d97706" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+
+    <!-- Golden Wave & Bible Rim Gradient -->
+    <linearGradient id="goldRimGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d97706" />
+      <stop offset="25%" stop-color="#fcd34d" />
+      <stop offset="50%" stop-color="#ffffff" />
+      <stop offset="75%" stop-color="#fcd34d" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+
+    <!-- Wave Broadcast Golden Glow -->
+    <linearGradient id="broadcastGold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff8db" />
+      <stop offset="50%" stop-color="#ffc107" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+
+    <!-- Squircle Border Gold -->
+    <linearGradient id="iconeBorderGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e5bb5" />
+      <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#0a2558" />
+    </linearGradient>
+
+    <!-- Drop Shadows -->
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.7" />
+    </filter>
+    <filter id="textGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.8" />
+    </filter>
+    <filter id="divineAura" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Base App Squircle Canvas -->
+  <rect x="6" y="6" width="388" height="388" rx="82" ry="82" fill="url(#iconeNavyBg)" />
+  <rect x="6" y="6" width="388" height="388" rx="82" ry="82" fill="none" stroke="url(#iconeBorderGold)" stroke-width="3" />
+
+  <!-- Top Dome Background Circle -->
+  <circle cx="200" cy="130" r="102" fill="url(#iconeDomeGlow)" />
+  <path d="M 98 135 A 102 102 0 1 1 302 135" fill="none" stroke="#2563eb" stroke-width="2" opacity="0.4" />
+
+  <!-- DIVINE LIGHT BURST BEHIND CROSS -->
+  <circle cx="200" cy="115" r="75" fill="url(#divineLight)" filter="url(#divineAura)" opacity="0.85" />
+
+  <!-- CONCENTRIC BROADCAST AUDIO WAVES ((( ✝ ))) -->
+  <!-- Left broadcast waves -->
+  <g stroke="url(#broadcastGold)" fill="none" stroke-linecap="round" filter="url(#softShadow)">
+    <!-- Inner left wave -->
+    <path d="M 166 94 A 36 36 0 0 0 166 136" stroke-width="4.5" />
+    <!-- Middle left wave -->
+    <path d="M 150 82 A 54 54 0 0 0 150 148" stroke-width="5" />
+    <!-- Outer left wave -->
+    <path d="M 134 70 A 74 74 0 0 0 134 160" stroke-width="5.5" />
+
+    <!-- Right broadcast waves -->
+    <!-- Inner right wave -->
+    <path d="M 234 94 A 36 36 0 0 1 234 136" stroke-width="4.5" />
+    <!-- Middle right wave -->
+    <path d="M 250 82 A 54 54 0 0 1 250 148" stroke-width="5" />
+    <!-- Outer right wave -->
+    <path d="M 266 70 A 74 74 0 0 1 266 160" stroke-width="5.5" />
+  </g>
+
+  <!-- SHINING LATIN CROSS -->
+  <g filter="url(#softShadow)">
+    <!-- Golden cross backing glow/bevel -->
+    <rect x="190.5" y="44" width="19" height="136" rx="4" fill="#d97706" />
+    <rect x="156.5" y="77" width="87" height="19" rx="4" fill="#d97706" />
+
+    <!-- Pure Brilliant White / Light Gold Cross Core -->
+    <rect x="192.5" y="46" width="15" height="132" rx="3" fill="#ffffff" />
+    <rect x="158.5" y="79" width="83" height="15" rx="3" fill="#ffffff" />
+
+    <!-- Specular Highlight down the center of the cross -->
+    <line x1="200" y1="50" x2="200" y2="175" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+    <line x1="162" y1="86.5" x2="238" y2="86.5" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+  </g>
+
+  <!-- OPEN BIBLE WITH LAYERED PAGES -->
+  <g filter="url(#softShadow)">
+    <!-- Bible Base & Deep Blue Cover -->
+    <path
+      d="M 46 222 C 105 192 165 204 200 216 C 235 204 295 192 354 222 C 342 232 290 228 200 224 C 110 228 58 232 46 222 Z"
+      fill="#06204c"
+    />
+    <!-- Golden Bottom Binding Trim -->
+    <path
+      d="M 46 222 Q 124 196 200 218 Q 276 196 354 222 C 342 234 278 226 200 227 C 122 226 58 234 46 222 Z"
+      fill="url(#goldRimGrad)"
+      stroke="#b45309"
+      stroke-width="1.5"
+    />
+
+    <!-- Middle Page Layers (Cream & White) -->
+    <path
+      d="M 52 216 C 110 188 168 198 200 214 C 232 198 290 188 348 216 C 334 204 278 195 200 210 C 122 195 66 204 52 216 Z"
+      fill="#e2e8f0"
+    />
+
+    <!-- Top Left Open Page -->
+    <path
+      d="M 200 214 C 172 162 120 152 68 198 C 66 201 68 205 72 204 C 122 184 170 190 200 214 Z"
+      fill="#ffffff"
+    />
+    <path
+      d="M 200 214 C 175 168 126 158 78 200"
+      fill="none"
+      stroke="#cbd5e1"
+      stroke-width="1.5"
+    />
+
+    <!-- Top Right Open Page -->
+    <path
+      d="M 200 214 C 228 162 280 152 332 198 C 334 201 332 205 328 204 C 278 184 230 190 200 214 Z"
+      fill="#ffffff"
+    />
+    <path
+      d="M 200 214 C 225 168 274 158 322 200"
+      fill="none"
+      stroke="#cbd5e1"
+      stroke-width="1.5"
+    />
+
+    <!-- Center Fold Glow -->
+    <polygon points="197,214 203,214 201,170 199,170" fill="#fcd34d" opacity="0.8" />
+  </g>
+
+  <!-- TEXT: "AS MAIS BELAS PASSAGENS DE" -->
+  <text
+    x="200"
+    y="254"
+    text-anchor="middle"
+    font-family="system-ui, -apple-system, 'Montserrat', 'Inter', sans-serif"
+    font-weight="800"
+    font-size="19"
+    letter-spacing="2.8"
+    fill="#ffffff"
+    filter="url(#textGlow)"
+  >
+    AS MAIS BELAS PASSAGENS DE
+  </text>
+
+  <!-- HERO TEXT: "JESUS" (GIANT 3D GOLD METALLIC) -->
+  <g filter="url(#textGlow)">
+    <!-- 3D Depth Shadow under JESUS -->
+    <text
+      x="200"
+      y="320"
+      text-anchor="middle"
+      font-family="system-ui, -apple-system, 'Montserrat', 'Arial Black', sans-serif"
+      font-weight="900"
+      font-size="64"
+      letter-spacing="3.5"
+      fill="#010a1a"
+      stroke="#010a1a"
+      stroke-width="7"
+      stroke-linejoin="round"
+    >
+      JESUS
+    </text>
+
+    <!-- Golden Face of JESUS -->
+    <text
+      x="200"
+      y="318"
+      text-anchor="middle"
+      font-family="system-ui, -apple-system, 'Montserrat', 'Arial Black', sans-serif"
+      font-weight="900"
+      font-size="64"
+      letter-spacing="3.5"
+      fill="url(#jesus3DGold)"
+    >
+      JESUS
+    </text>
+  </g>
+
+  <!-- AUDIO EQUALIZER DIVIDER (——— ||||| ———) -->
+  <g transform="translate(200, 338)" filter="url(#softShadow)">
+    <!-- Left Divider Rule -->
+    <line x1="-125" y1="0" x2="-26" y2="0" stroke="url(#goldRimGrad)" stroke-width="2.5" stroke-linecap="round" />
+
+    <!-- 5 Golden Equalizer Wave Bars -->
+    <rect x="-20" y="-6" width="5.5" height="12" rx="2.75" fill="url(#broadcastGold)" />
+    <rect x="-10" y="-11" width="5.5" height="22" rx="2.75" fill="url(#broadcastGold)" />
+    <rect x="0" y="-17" width="5.5" height="34" rx="2.75" fill="#ffffff" />
+    <rect x="10" y="-11" width="5.5" height="22" rx="2.75" fill="url(#broadcastGold)" />
+    <rect x="20" y="-6" width="5.5" height="12" rx="2.75" fill="url(#broadcastGold)" />
+
+    <!-- Right Divider Rule -->
+    <line x1="26" y1="0" x2="125" y2="0" stroke="url(#goldRimGrad)" stroke-width="2.5" stroke-linecap="round" />
+  </g>
+
+  <!-- SUBTITLE TEXT: "Á U D I O" -->
+  <text
+    x="200"
+    y="370"
+    text-anchor="middle"
+    font-family="system-ui, -apple-system, 'Montserrat', 'Inter', sans-serif"
+    font-weight="700"
+    font-size="16"
+    letter-spacing="9"
+    fill="#fcd34d"
+    filter="url(#textGlow)"
+  >
+    Á U D I O
+  </text>
+</svg>

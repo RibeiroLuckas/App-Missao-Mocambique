@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 580" width="100%" height="100%">
+  <defs>
+    <style>
+      .outline-thick { stroke: #0f172a; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; fill: #ffffff; }
+      .outline-medium { stroke: #0f172a; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; fill: #ffffff; }
+      .outline-thin { stroke: #0f172a; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: #ffffff; }
+      .title-text { font-family: 'Inter', system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: 800; fill: #334155; letter-spacing: 1px; }
+    </style>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="800" height="580" fill="#ffffff" />
+
+  <!-- ==================== BANDEIRA DE MOÇAMBIQUE (LINHAS DE CONTORNO LIMPAS PARA COLORIR) ==================== -->
+  <g transform="translate(50, 35)">
+    <!-- 1. Contorno externo total da bandeira (proporção oficial 3:2 -> 700x466) -->
+    <rect x="0" y="0" width="700" height="466" class="outline-thick" />
+
+    <!-- 2. Faixa Superior -->
+    <rect x="0" y="0" width="700" height="140" class="outline-medium" />
+
+    <!-- 3. Fímbria Separadora Superior -->
+    <rect x="0" y="140" width="700" height="23" class="outline-thin" />
+
+    <!-- 4. Faixa Central -->
+    <rect x="0" y="163" width="700" height="140" class="outline-medium" />
+
+    <!-- 5. Fímbria Separadora Inferior -->
+    <rect x="0" y="303" width="700" height="23" class="outline-thin" />
+
+    <!-- 6. Faixa Inferior -->
+    <rect x="0" y="326" width="700" height="140" class="outline-medium" />
+
+    <!-- 7. Triângulo Isósceles Lateral (Base na tralha) -->
+    <polygon points="0,0 290,233 0,466" class="outline-thick" />
+
+    <!-- 8. Brasão Nacional: Estrela de 5 Pontas (cx=115, cy=233, r=72) -->
+    <polygon points="
+      115,161 
+      131,210 
+      183,210 
+      141,241 
+      157,290 
+      115,259 
+      73,290 
+      89,241 
+      47,210 
+      99,210
+    " class="outline-thick" />
+
+    <!-- 9. Livro Aberto no Centro da Estrela -->
+    <g class="outline-medium">
+      <!-- Páginas abertas curvas -->
+      <path d="M 72,230 Q 115,238 115,225 Q 115,238 158,230 L 158,265 Q 115,273 115,258 Q 115,273 72,265 Z" />
+      <!-- Dobra central do livro -->
+      <line x1="115" y1="225" x2="115" y2="258" class="outline-medium" />
+      <!-- Linhas sutis simulando texto nas páginas -->
+      <line x1="79" y1="239" x2="108" y2="242" class="outline-thin" />
+      <line x1="79" y1="247" x2="108" y2="250" class="outline-thin" />
+      <line x1="79" y1="255" x2="108" y2="258" class="outline-thin" />
+      <line x1="122" y1="242" x2="151" y2="239" class="outline-thin" />
+      <line x1="122" y1="250" x2="151" y2="247" class="outline-thin" />
+      <line x1="122" y1="258" x2="151" y2="255" class="outline-thin" />
+    </g>
+
+    <!-- 10. Enxada Agrícola Cruzada -->
+    <g class="outline-medium">
+      <!-- Cabo da enxada -->
+      <line x1="56" y1="295" x2="168" y2="173" stroke="#0f172a" stroke-width="7" stroke-linecap="round" />
+      <line x1="56" y1="295" x2="168" y2="173" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" />
+      <!-- Lâmina da enxada -->
+      <polygon points="160,165 186,167 180,190 154,188" class="outline-thick" />
+      <line x1="160" y1="165" x2="180" y2="190" class="outline-thin" />
+    </g>
+
+    <!-- 11. Espingarda com Baioneta Cruzada -->
+    <g class="outline-medium">
+      <!-- Cano e coronha da espingarda -->
+      <line x1="62" y1="172" x2="174" y2="295" stroke="#0f172a" stroke-width="6.5" stroke-linecap="round" />
+      <line x1="62" y1="172" x2="174" y2="295" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+      <!-- Baioneta -->
+      <polygon points="58,168 47,154 63,164" class="outline-thick" />
+      <!-- Carregador curvo -->
+      <path d="M 130,246 Q 143,260 135,268" stroke="#0f172a" stroke-width="4.5" fill="none" stroke-linecap="round" />
+    </g>
+  </g>
+
+  <!-- Rodapé limpo com identificação do desenho -->
+  <g transform="translate(400, 542)" text-anchor="middle">
+    <text class="title-text" y="0">BANDEIRA DE MOÇAMBIQUE • DESENHO PARA COLORIR</text>
+  </g>
+</svg>
