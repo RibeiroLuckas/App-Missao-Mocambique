@@ -59,12 +59,14 @@ export default function LanguageSelector({ selectedLanguage, onSelectLanguage }:
   const currentLang = languages.find(l => l.code === (selectedLanguage === 'pt_PT' ? 'pt' : selectedLanguage)) || languages[0];
 
   return (
-    <div className="absolute top-3.5 right-4 z-40" ref={dropdownRef}>
+    <div className="language-selector absolute z-40" ref={dropdownRef}>
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 bg-[#02182b]/95 hover:bg-[#062c54] active:scale-95 text-slate-100 border border-[#0b2d4f] hover:border-[#f1a30a]/60 px-3.5 py-2 rounded-xl backdrop-blur-md shadow-xl transition text-xs font-bold cursor-pointer"
+        className="min-h-[44px] flex items-center gap-2 bg-[#02182b]/95 hover:bg-[#062c54] active:scale-95 text-slate-100 border border-[#0b2d4f] hover:border-[#f1a30a]/60 px-3.5 py-2 rounded-xl backdrop-blur-md shadow-xl transition text-xs font-bold cursor-pointer"
         title="Selecionar Idioma"
+        aria-label="Selecionar Idioma"
+        aria-expanded={isOpen}
       >
         {currentLang.flag}
         <span className="font-sans font-black tracking-wide">{currentLang.label}</span>
@@ -83,7 +85,7 @@ export default function LanguageSelector({ selectedLanguage, onSelectLanguage }:
                   onSelectLanguage(lang.code as LanguageType);
                   setIsOpen(false);
                 }}
-                className={`w-full flex items-center gap-3 px-3.5 py-2.5 text-left text-xs font-bold transition cursor-pointer ${
+                className={`min-h-[44px] w-full flex items-center gap-3 px-3.5 py-2.5 text-left text-xs font-bold transition cursor-pointer ${
                   isSelected
                     ? 'bg-[#f1a30a] text-[#020b18]'
                     : 'text-slate-200 hover:bg-[#062c54]/80'

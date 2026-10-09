@@ -35,7 +35,7 @@ export default function HomeTab({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="relative flex-1 w-full min-h-full flex flex-col justify-between overflow-hidden select-none"
+      className="relative flex-1 shrink-0 w-full min-h-full flex flex-col justify-between overflow-hidden select-none"
     >
       {/* BACKGROUND IMAGE - EXATAMENTE src/assets/images/nova capa.jpg */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -50,7 +50,7 @@ export default function HomeTab({
       <div className="flex-1 min-h-[0.5rem]" />
 
       {/* VERSÍCULO DO DIA CARD + "CONHEÇA A MISSÃO" BUTTON + BANDEIRAS SVG DE IDIOMA */}
-      <footer className="relative z-10 px-4 pb-[max(7.5rem,calc(env(safe-area-inset-bottom,0px)+7rem))] sm:pb-32 w-full max-w-lg mx-auto space-y-5">
+      <footer className="relative z-10 px-4 pt-[calc(env(safe-area-inset-top,0px)+4rem)] pb-6 w-full max-w-lg mx-auto space-y-5">
         {/* Versículo do dia Glassmorphism Card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

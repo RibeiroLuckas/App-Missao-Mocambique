@@ -745,7 +745,7 @@ export default function App() {
   };
 
   return (
-    <div className="w-full min-h-[100dvh] bg-[#041d34] text-slate-100 font-sans flex flex-col relative overflow-x-hidden selection:bg-amber-500 selection:text-slate-950">
+    <div className="app-shell w-full bg-[#041d34] text-slate-100 font-sans flex flex-col relative selection:bg-amber-500 selection:text-slate-950">
       
       {/* Grouped Language Selector in Top-Right Corner (Only on Home screen 'inicio') */}
       {activeTab === 'inicio' && (
@@ -775,7 +775,7 @@ export default function App() {
               initial={{ opacity: 0, y: -50, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
-              className="absolute top-4 left-1/2 -translate-x-1/2 z-50 bg-amber-500 text-slate-950 font-medium px-5 py-3 rounded-none shadow-2xl flex items-center gap-2 max-w-sm border border-amber-300"
+              className="absolute top-[calc(env(safe-area-inset-top,0px)+3.75rem)] left-1/2 -translate-x-1/2 z-50 bg-amber-500 text-slate-950 font-medium px-5 py-3 rounded-none shadow-2xl flex items-center gap-2 max-w-sm border border-amber-300"
             >
               <Sparkles className="w-4 h-4 shrink-0 animate-bounce" />
               <span className="text-sm cursor-default">{toastMessage}</span>
@@ -784,7 +784,7 @@ export default function App() {
         </AnimatePresence>
 
         {/* APP ACTIVE CONTENT PORTAL - Scrollable inside the device frame */}
-        <div className="flex-1 overflow-y-auto custom-scrollbar bg-[#041d34] flex flex-col w-full p-0 pb-[7rem]">
+        <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain custom-scrollbar bg-[#041d34] flex flex-col w-full p-0">
 
             {/* SCREEN PORTALS */}
             {activeTab === 'inicio' && (
@@ -920,7 +920,7 @@ export default function App() {
           </AnimatePresence>
 
           {/* PHONE NAVIGATION BAR (5 items: Inicio, Passagens de Jesus, Missao, Biblia, Mais) - Scaled +10% */}
-          <nav className="fixed bottom-0 left-0 right-0 w-full min-h-[6.1rem] bg-[#010c18]/95 backdrop-blur-lg border-t border-[#0b2d4f]/60 shadow-[0_-6px_28px_rgba(0,0,0,0.65)] flex justify-around items-center px-1 z-40 pt-2 pb-[max(0.7rem,env(safe-area-inset-bottom,0px))]">
+          <nav className="app-navigation relative shrink-0 w-full bg-[#010c18]/95 backdrop-blur-lg border-t border-[#0b2d4f]/60 shadow-[0_-6px_28px_rgba(0,0,0,0.65)] flex justify-around items-center z-40 pt-2">
             
             {/* 1. Início */}
             <button
@@ -1006,7 +1006,7 @@ export default function App() {
 
           {/* Offline Indicator Banner */}
           {!isOnline && (
-            <div className="fixed bottom-[max(5rem,calc(env(safe-area-inset-bottom,0px)+4.5rem))] left-4 right-4 z-50 flex items-center justify-center gap-2 rounded-xl bg-amber-600/95 backdrop-blur-md px-4 py-2 text-xs font-bold text-white shadow-xl border border-amber-400/40 animate-pulse">
+            <div className="absolute bottom-[calc(6.85rem+env(safe-area-inset-bottom,0px))] left-4 right-4 z-50 flex items-center justify-center gap-2 rounded-xl bg-amber-600/95 backdrop-blur-md px-4 py-2 text-xs font-bold text-white shadow-xl border border-amber-400/40 animate-pulse">
               <span className="h-2.5 w-2.5 rounded-full bg-white animate-ping shrink-0" />
               <span>{getOfflineBannerText(selectedLanguage)}</span>
             </div>
@@ -1014,7 +1014,7 @@ export default function App() {
 
           {/* PWA Update Prompt Banner */}
           {needRefresh && (
-            <div className="fixed bottom-[max(5rem,calc(env(safe-area-inset-bottom,0px)+4.5rem))] left-4 right-4 z-50 flex items-center justify-between gap-3 rounded-xl bg-blue-600/95 backdrop-blur-md px-4 py-3 text-xs font-bold text-white shadow-2xl border border-blue-400/40">
+            <div className="absolute bottom-[calc(6.85rem+env(safe-area-inset-bottom,0px))] left-4 right-4 z-50 flex items-center justify-between gap-3 rounded-xl bg-blue-600/95 backdrop-blur-md px-4 py-3 text-xs font-bold text-white shadow-2xl border border-blue-400/40">
               <span>
                 {selectedLanguage === 'en'
                   ? "A new version of the app is available."

@@ -34,16 +34,34 @@
 }
 
 html, body, #root {
-  min-height: 100%;
+  height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   background-color: #041d34;
   -webkit-tap-highlight-color: transparent;
   touch-action: auto;
-  overscroll-behavior-y: auto;
+  overscroll-behavior-y: none;
+}
+
+/* Only the content scrolls; the navigation fills the bottom safe area once. */
+.app-shell {
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.app-navigation {
+  min-height: calc(6.1rem + env(safe-area-inset-bottom, 0px));
+  padding-bottom: max(0.7rem, env(safe-area-inset-bottom, 0px));
+  padding-left: max(0.25rem, env(safe-area-inset-left, 0px));
+  padding-right: max(0.25rem, env(safe-area-inset-right, 0px));
+}
+
+.language-selector {
+  top: calc(env(safe-area-inset-top, 0px) + 0.5rem);
+  right: calc(env(safe-area-inset-right, 0px) + 1rem);
 }
 
 html {
@@ -65,4 +83,3 @@ html {
 .text-\[14px\], .text-\[14\.5px\] { font-size: 16.75px !important; }
 .text-\[15px\], .text-\[15\.5px\] { font-size: 17.90px !important; }
 .text-\[16px\] { font-size: 19.06px !important; }
-
