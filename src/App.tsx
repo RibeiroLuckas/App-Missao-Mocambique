@@ -49,6 +49,7 @@ import JesusPassagesIcon from './components/JesusPassagesIcon';
 import AudioTrackPopup from './components/AudioTrackPopup';
 import LanguageSelector from './components/LanguageSelector';
 import { useRegisterSW } from 'virtual:pwa-register/react';
+import { usePWAInstall } from './usePWAInstall';
 
 import { getLocalizedBibleVolumes, BibleTrack } from './data/bibleVolumesData';
 import volume1Img from './assets/images/Captura de tela 2026-09-08 132845.png';
@@ -72,6 +73,7 @@ const VOLUME_IMAGES: Record<number, string> = {
 };
 
 export default function App() {
+  const installation = usePWAInstall();
   // Device mode & Simulator defaults
   const [activeTab, setActiveTab] = useState<TabType>('inicio');
   const [selectedLanguage, setSelectedLanguage] = useState<LanguageType>(() => {
@@ -833,6 +835,7 @@ export default function App() {
 
             {(activeTab === 'missao' || activeTab === 'mais') && (
               <MissionTab
+                installation={installation}
                 MISSION_PROJECTS={MISSION_PROJECTS}
                 newsItemsList={newsItemsList}
                 onShowToast={showToast}

@@ -1,8 +1,10 @@
 import React from 'react';
 import MenuTab, { MenuSubView } from './MenuTab';
 import { MissionProject, NewsItem, LanguageType, PrayerRequest } from '../types';
+import { PWAInstall } from '../usePWAInstall';
 
 interface MissionTabProps {
+  installation: PWAInstall;
   MISSION_PROJECTS: MissionProject[];
   newsItemsList: NewsItem[];
   onShowToast: (msg: string) => void;
@@ -18,6 +20,7 @@ interface MissionTabProps {
 }
 
 export default function MissionTab({
+  installation,
   onShowToast,
   onNavigateToHome = () => {},
   selectedLanguage,
@@ -31,6 +34,7 @@ export default function MissionTab({
 }: MissionTabProps) {
   return (
     <MenuTab
+      installation={installation}
       initialSubView={initialSubView}
       onNavigateToHome={onNavigateToHome}
       onShowToast={onShowToast}

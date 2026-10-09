@@ -40,6 +40,8 @@ import { MissionProject, PrayerRequest, LanguageType, UpcomingMission, GalleryPh
 import { COLORING_DRAWINGS, ColoringDrawing } from '../data/kidsColoringData';
 import { KIDS_VIDEOS, KidsVideo } from '../data/kidsVideosData';
 import { t } from '../data/translations';
+import { PWAInstall } from '../usePWAInstall';
+import InstallMenuItem from './InstallMenuItem';
 
 import childrenGroup1 from '../assets/images/children_group_1_1784054748086.jpg';
 import childrenGroup2 from '../assets/images/children_group_2_1784054774596.jpg';
@@ -61,6 +63,7 @@ export type MenuSubView =
   | 'fale-conosco';
 
 interface MenuTabProps {
+  installation: PWAInstall;
   initialSubView?: MenuSubView;
   onNavigateToHome: () => void;
   onShowToast: (msg: string) => void;
@@ -212,6 +215,7 @@ const INITIAL_GALLERY: GalleryPhoto[] = [
 ];
 
 export default function MenuTab({
+  installation,
   initialSubView = 'menu',
   onNavigateToHome,
   onShowToast,
@@ -597,6 +601,7 @@ export default function MenuTab({
 
               {/* Menu Items List */}
               <div className="space-y-2">
+                <InstallMenuItem installation={installation} language={selectedLanguage} onShowToast={onShowToast} />
                 {MENU_ITEMS.map((item) => {
                   const Icon = item.icon;
                   return (
