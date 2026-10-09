@@ -10,7 +10,20 @@
     <meta name="theme-color" content="#041d34" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <script>
+      // Run before the first layout: iOS standalone's cover viewport can shift
+      // the entire page behind the status bar and leave a gap at the bottom.
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      const isInstalled = navigator.standalone === true ||
+        window.matchMedia('(display-mode: standalone)').matches;
+      if (isIOS && isInstalled) {
+        document.documentElement.dataset.iosPwa = 'true';
+        document.querySelector('meta[name="viewport"]').content =
+          'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=auto';
+      }
+    </script>
     <meta name="apple-mobile-web-app-title" content="Moçambique" />
     <meta name="application-name" content="Missão Moçambique" />
     <link rel="manifest" href="/manifest.json" />
@@ -23,4 +36,3 @@
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

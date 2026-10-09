@@ -46,22 +46,48 @@ html, body, #root {
 }
 
 /* Only the content scrolls; the navigation fills the bottom safe area once. */
+:root {
+  --app-safe-top: env(safe-area-inset-top, 0px);
+  --app-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --app-safe-left: env(safe-area-inset-left, 0px);
+  --app-safe-right: env(safe-area-inset-right, 0px);
+}
+
+/* With the iOS installed viewport fitted by the system, these areas are
+   already outside the page. Do not reserve their space a second time. */
+html[data-ios-pwa="true"] {
+  --app-safe-top: 0px;
+  --app-safe-bottom: 0px;
+  --app-safe-left: 0px;
+  --app-safe-right: 0px;
+}
+
+html[data-ios-pwa="true"],
+html[data-ios-pwa="true"] body {
+  background-color: #010c18;
+}
+
 .app-shell {
   height: 100vh;
   height: 100dvh;
   overflow: hidden;
 }
 
+html[data-ios-pwa="true"] .app-shell {
+  /* Use the system-fitted containing block, not iOS standalone viewport units. */
+  height: 100%;
+}
+
 .app-navigation {
-  min-height: calc(6.1rem + env(safe-area-inset-bottom, 0px));
-  padding-bottom: max(0.7rem, env(safe-area-inset-bottom, 0px));
-  padding-left: max(0.25rem, env(safe-area-inset-left, 0px));
-  padding-right: max(0.25rem, env(safe-area-inset-right, 0px));
+  min-height: calc(6.1rem + var(--app-safe-bottom));
+  padding-bottom: max(0.7rem, var(--app-safe-bottom));
+  padding-left: max(0.25rem, var(--app-safe-left));
+  padding-right: max(0.25rem, var(--app-safe-right));
 }
 
 .language-selector {
-  top: calc(env(safe-area-inset-top, 0px) + 0.5rem);
-  right: calc(env(safe-area-inset-right, 0px) + 1rem);
+  top: calc(var(--app-safe-top) + 0.5rem);
+  right: calc(var(--app-safe-right) + 1rem);
 }
 
 html {

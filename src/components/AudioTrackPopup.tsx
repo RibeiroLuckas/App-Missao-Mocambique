@@ -55,7 +55,7 @@ export default function AudioTrackPopup({
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: 25, scale: 0.98 }}
       transition={{ type: "spring", stiffness: 350, damping: 30 }}
-      className="absolute bottom-[calc(6.85rem+env(safe-area-inset-bottom,0px))] inset-x-2.5 sm:inset-x-4 z-50 select-none"
+      className="absolute bottom-[calc(6.85rem+var(--app-safe-bottom))] inset-x-2.5 sm:inset-x-4 z-50 select-none"
     >
       <div className="relative rounded-2xl overflow-hidden bg-[#031528]/95 backdrop-blur-xl border border-[#0d3b66] shadow-[0_12px_40px_rgba(0,0,0,0.75)] p-2.5 sm:p-3 text-white">
         {/* Subtle Top Ambient Glow Line */}

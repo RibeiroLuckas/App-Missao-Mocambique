@@ -50,7 +50,7 @@ export default function HomeTab({
       <div className="flex-1 min-h-[0.5rem]" />
 
       {/* VERSÍCULO DO DIA CARD + "CONHEÇA A MISSÃO" BUTTON + BANDEIRAS SVG DE IDIOMA */}
-      <footer className="relative z-10 px-4 pt-[calc(env(safe-area-inset-top,0px)+4rem)] pb-6 w-full max-w-lg mx-auto space-y-5">
+      <footer className="relative z-10 px-4 pt-[calc(var(--app-safe-top)+4rem)] pb-6 w-full max-w-lg mx-auto space-y-5">
         {/* Versículo do dia Glassmorphism Card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

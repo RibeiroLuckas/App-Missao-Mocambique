@@ -466,7 +466,7 @@ export default function BibleTab({
   return (
     <div className="w-full min-h-full flex flex-col space-y-4 pb-12 px-0 text-left">
       {/* High-Fidelity Custom Navigation Header matching screenshot */}
-      <div className="sticky top-0 z-30 bg-[#041d34]/95 backdrop-blur-md flex items-center justify-between border-b border-[#0b2d4f] pt-[max(2.5rem,calc(env(safe-area-inset-top,0px)+0.5rem))] pb-3 mb-1 px-4">
+      <div className="sticky top-0 z-30 bg-[#041d34]/95 backdrop-blur-md flex items-center justify-between border-b border-[#0b2d4f] pt-[max(2.5rem,calc(var(--app-safe-top)+0.5rem))] pb-3 mb-1 px-4">
         <button
           onClick={() => {
             if (subView !== 'grid') {

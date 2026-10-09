@@ -552,7 +552,7 @@ export default function MenuTab({
     <div className="w-full min-h-full flex flex-col text-slate-100 pb-16 px-0 select-none">
       {/* 1. TOP HEADER BAR (Only visible inside subviews to provide the Back button) */}
       {subView !== 'menu' && (
-        <header className="sticky top-0 z-30 bg-[#041d34]/95 backdrop-blur-md border-b border-[#0b2d4f] px-4 pt-[max(2.5rem,calc(env(safe-area-inset-top,0px)+0.5rem))] pb-3 flex items-center justify-between gap-2">
+        <header className="sticky top-0 z-30 bg-[#041d34]/95 backdrop-blur-md border-b border-[#0b2d4f] px-4 pt-[max(2.5rem,calc(var(--app-safe-top)+0.5rem))] pb-3 flex items-center justify-between gap-2">
           <button
             type="button"
             onClick={() => setSubView('menu')}
@@ -576,7 +576,7 @@ export default function MenuTab({
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
-              className="space-y-4 p-4 pt-[max(1.25rem,calc(env(safe-area-inset-top,0px)+0.75rem))]"
+              className="space-y-4 p-4 pt-[max(1.25rem,calc(var(--app-safe-top)+0.75rem))]"
             >
               {/* Top Mission Banner */}
               <div className="relative rounded-2xl overflow-hidden h-36 shadow-lg border border-[#0b2d4f] group">

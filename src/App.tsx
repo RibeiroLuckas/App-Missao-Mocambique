@@ -775,7 +775,7 @@ export default function App() {
               initial={{ opacity: 0, y: -50, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
-              className="absolute top-[calc(env(safe-area-inset-top,0px)+3.75rem)] left-1/2 -translate-x-1/2 z-50 bg-amber-500 text-slate-950 font-medium px-5 py-3 rounded-none shadow-2xl flex items-center gap-2 max-w-sm border border-amber-300"
+              className="absolute top-[calc(var(--app-safe-top)+3.75rem)] left-1/2 -translate-x-1/2 z-50 bg-amber-500 text-slate-950 font-medium px-5 py-3 rounded-none shadow-2xl flex items-center gap-2 max-w-sm border border-amber-300"
             >
               <Sparkles className="w-4 h-4 shrink-0 animate-bounce" />
               <span className="text-sm cursor-default">{toastMessage}</span>
@@ -1006,7 +1006,7 @@ export default function App() {
 
           {/* Offline Indicator Banner */}
           {!isOnline && (
-            <div className="absolute bottom-[calc(6.85rem+env(safe-area-inset-bottom,0px))] left-4 right-4 z-50 flex items-center justify-center gap-2 rounded-xl bg-amber-600/95 backdrop-blur-md px-4 py-2 text-xs font-bold text-white shadow-xl border border-amber-400/40 animate-pulse">
+            <div className="absolute bottom-[calc(6.85rem+var(--app-safe-bottom))] left-4 right-4 z-50 flex items-center justify-center gap-2 rounded-xl bg-amber-600/95 backdrop-blur-md px-4 py-2 text-xs font-bold text-white shadow-xl border border-amber-400/40 animate-pulse">
               <span className="h-2.5 w-2.5 rounded-full bg-white animate-ping shrink-0" />
               <span>{getOfflineBannerText(selectedLanguage)}</span>
             </div>
@@ -1014,7 +1014,7 @@ export default function App() {
 
           {/* PWA Update Prompt Banner */}
           {needRefresh && (
-            <div className="absolute bottom-[calc(6.85rem+env(safe-area-inset-bottom,0px))] left-4 right-4 z-50 flex items-center justify-between gap-3 rounded-xl bg-blue-600/95 backdrop-blur-md px-4 py-3 text-xs font-bold text-white shadow-2xl border border-blue-400/40">
+            <div className="absolute bottom-[calc(6.85rem+var(--app-safe-bottom))] left-4 right-4 z-50 flex items-center justify-between gap-3 rounded-xl bg-blue-600/95 backdrop-blur-md px-4 py-3 text-xs font-bold text-white shadow-2xl border border-blue-400/40">
               <span>
                 {selectedLanguage === 'en'
                   ? "A new version of the app is available."
