@@ -35,10 +35,10 @@ export default function HomeTab({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="relative flex-1 shrink-0 w-full min-h-full flex flex-col justify-between overflow-hidden select-none"
+      className="home-screen relative flex-1 shrink-0 w-full min-h-full flex flex-col justify-between overflow-hidden select-none"
     >
-      {/* BACKGROUND IMAGE - EXATAMENTE src/assets/images/nova capa.jpg */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      {/* Preserve the portrait cover on mobile; frame the coast on desktop. */}
+      <div className="home-backdrop absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <img
           src={homeBgNovaCapa}
           alt="Missão Moçambique - Capa Oficial"
@@ -46,11 +46,24 @@ export default function HomeTab({
         />
       </div>
 
+      <div className="home-desktop-flag">
+        <img src={homeBgNovaCapa} alt="Bandeira de Moçambique" />
+      </div>
+
+      <header className="home-desktop-intro relative z-10">
+        <img className="home-desktop-logo" src={firstOrlandoLogo} alt="First Orlando — Campus Brasileiro" />
+        <h1>
+          <span>{t('home_mission_title_p1', selectedLanguage)}</span>
+          <span>{t('home_mission_title_p2', selectedLanguage)}</span>
+        </h1>
+        <p>{t('home_mission_tagline', selectedLanguage)}</p>
+      </header>
+
       {/* Spacer to keep center area responsive */}
-      <div className="flex-1 min-h-[0.5rem]" />
+      <div className="home-spacer flex-1 min-h-[0.5rem]" />
 
       {/* VERSÍCULO DO DIA CARD + "CONHEÇA A MISSÃO" BUTTON + BANDEIRAS SVG DE IDIOMA */}
-      <footer className="relative z-10 px-4 pt-[calc(var(--app-safe-top)+4rem)] pb-6 w-full max-w-lg mx-auto space-y-5">
+      <footer className="home-actions relative z-10 px-4 pt-[calc(var(--app-safe-top)+4rem)] pb-6 w-full max-w-lg mx-auto space-y-5">
         {/* Versículo do dia Glassmorphism Card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
