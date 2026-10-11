@@ -1,4 +1,5 @@
 import { JesusPassage, NewsItem, MissionProject, PrayerRequest, LanguageType } from '../types';
+import { getPassageAudioUrl } from './jesusPassagesAudio';
 import childrenGroup2 from '../assets/images/children_group_2_1784054774596.jpg';
 import childrenCloseUp from '../assets/images/children_close_up_1784054763230.jpg';
 
@@ -12,9 +13,9 @@ export const JESUS_PASSAGES: JesusPassage[] = [
     description: "Acompanhe as passagens que marcam o começo da vida e do ministério de Jesus.",
     bibleText: "E o Verbo se fez carne, e habitou entre nós, e vimos a sua glória, como a glória do unigênito do Pai, cheio de graça e de verdade. João escreveu sobre ele e clamou: 'Este é aquele de quem eu disse: O que vem depois de mim é antes de mim, porque já era primeiro do que eu'. (João 1:14-15)",
     audioUrls: {
-      pt: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-      pt_PT: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
-      en: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+      pt: getPassageAudioUrl(1, 1)!,
+      pt_PT: getPassageAudioUrl(1, 1)!,
+      en: getPassageAudioUrl(1, 1)!
     },
     duration: "4:12",
     image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&auto=format&fit=crop&q=80"
@@ -26,9 +27,9 @@ export const JESUS_PASSAGES: JesusPassage[] = [
     description: "Descubra os milagres que revelam o poder, a compaixão e o amor de Jesus.",
     bibleText: "E Jesus, saindo, viu uma grande multidão, e possuído de íntima compaixão para com ela, curou os seus enfermos. E, ao anoitecer, aproximaram-se dele os seus discípulos, dizendo: O lugar é deserto, e a hora é já avançada; despede a multidão, para que vão pelas aldeias, e comprem comida para si. Jesus, porém, lhes disse: Não é mister que vão; dai-lhes vós de comer. (Mateus 14:14-16)",
     audioUrls: {
-      pt: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
-      pt_PT: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
-      en: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"
+      pt: getPassageAudioUrl(2, 1)!,
+      pt_PT: getPassageAudioUrl(2, 1)!,
+      en: getPassageAudioUrl(2, 1)!
     },
     duration: "6:45",
     image: "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=800&auto=format&fit=crop&q=80"
@@ -40,9 +41,9 @@ export const JESUS_PASSAGES: JesusPassage[] = [
     description: "Histórias simples que ensinam verdades profundas para a vida de todos nós.",
     bibleText: "Outra parábola lhes propôs, dizendo: O reino dos céus é semelhante ao grão de mostarda que um homem pegou e semeou no seu campo; O qual é realmente a menor de todas as sementes; mas, crescendo, é a maior das plantas, e faz-se uma árvore, de sorte que vêm as aves do céu, e se anidam nos seus ramos. (Mateus 13:31-32)",
     audioUrls: {
-      pt: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
-      pt_PT: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
-      en: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3"
+      pt: getPassageAudioUrl(3, 1)!,
+      pt_PT: getPassageAudioUrl(3, 1)!,
+      en: getPassageAudioUrl(3, 1)!
     },
     duration: "5:20",
     image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800&auto=format&fit=crop&q=80"
@@ -54,9 +55,9 @@ export const JESUS_PASSAGES: JesusPassage[] = [
     description: "Acompanhe os últimos dias de Jesus, sua morte, ressurreição e a vitória que transforma vidas.",
     bibleText: "Mas o anjo, respondendo, disse às mulheres: Não tenhais medo; pois eu sei que buscais a Jesus, que foi crucificado. Ele não está aqui, porque já ressuscitou, como havia dito. Vinde e vede o lugar onde o Senhor jazia. E ide depressa, e dizei aos seus discípulos que já ressuscitou dos mortos. (Mateus 28:5-7)",
     audioUrls: {
-      pt: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
-      pt_PT: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3",
-      en: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3"
+      pt: getPassageAudioUrl(4, 1)!,
+      pt_PT: getPassageAudioUrl(4, 1)!,
+      en: getPassageAudioUrl(4, 1)!
     },
     duration: "8:15",
     image: "https://images.unsplash.com/photo-1544860707-c3fe04945412?w=800&auto=format&fit=crop&q=80"

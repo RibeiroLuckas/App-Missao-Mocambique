@@ -1,4 +1,5 @@
 import { LanguageType } from '../types';
+import { getPassageAudioUrl, getPassageAudioTrackNumbers } from './jesusPassagesAudio';
 
 export interface BibleTrack {
   id: string;
@@ -43,7 +44,7 @@ export function getLocalizedBibleMeta(lang: LanguageType = 'pt') {
   return BIBLE_SERIES_META;
 }
 
-export const BIBLE_VOLUMES: BibleVolume[] = [
+const PT_VOLUMES: BibleVolume[] = [
   {
     id: 1,
     title: "VOLUME 1",
@@ -306,12 +307,36 @@ const ES_VOLUMES: BibleVolume[] = [
   }
 ];
 
+function withLocalAudio(volumes: BibleVolume[], lang: LanguageType): BibleVolume[] {
+  return volumes.map(volume => {
+    const tracks: BibleTrack[] = volume.tracks.map((track, index) => ({
+      ...track,
+      trackNumber: index + 1,
+      audioUrl: getPassageAudioUrl(volume.id, index + 1),
+    }));
+
+    // Keep recordings beyond the existing passage list without inventing their titles.
+    for (const trackNumber of getPassageAudioTrackNumbers(volume.id)) {
+      if (trackNumber <= tracks.length) continue;
+      tracks.push({
+        id: `volume-${volume.id}-track-${trackNumber}`,
+        trackNumber,
+        title: lang === 'en' ? 'Additional passage' : lang === 'es' ? 'Pasaje adicional' : 'Passagem adicional',
+        reference: '',
+        volumeId: volume.id,
+        audioUrl: getPassageAudioUrl(volume.id, trackNumber),
+      });
+    }
+    return { ...volume, tracks };
+  });
+}
+
+export const BIBLE_VOLUMES = withLocalAudio(PT_VOLUMES, 'pt');
+const EN_VOLUMES_WITH_AUDIO = withLocalAudio(EN_VOLUMES, 'en');
+const ES_VOLUMES_WITH_AUDIO = withLocalAudio(ES_VOLUMES, 'es');
+
 export function getLocalizedBibleVolumes(lang: LanguageType = 'pt'): BibleVolume[] {
-  if (lang === 'en') {
-    return EN_VOLUMES;
-  }
-  if (lang === 'es') {
-    return ES_VOLUMES;
-  }
+  if (lang === 'en') return EN_VOLUMES_WITH_AUDIO;
+  if (lang === 'es') return ES_VOLUMES_WITH_AUDIO;
   return BIBLE_VOLUMES;
 }

@@ -114,6 +114,7 @@ export default function LouvoresTab({
   };
 
   const handlePlayTrack = (track: BibleTrack) => {
+    if (!track.audioUrl) return;
     const trackNumStr = track.trackNumber < 10 ? `0${track.trackNumber}` : `${track.trackNumber}`;
     const passage: JesusPassage = {
       id: track.id,
@@ -122,9 +123,9 @@ export default function LouvoresTab({
       description: `${t('louvores_vol_label', selectedLanguage)} ${track.volumeId} • ${track.reference}`,
       bibleText: `${track.title} (${track.reference})`,
       audioUrls: {
-        pt: track.audioUrl || "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-        pt_PT: track.audioUrl || "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
-        en: track.audioUrl || "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+        pt: track.audioUrl,
+        pt_PT: track.audioUrl,
+        en: track.audioUrl
       },
       duration: track.duration || "4:00",
       image: VOLUME_IMAGES[track.volumeId] || volume1Img
@@ -469,7 +470,8 @@ export default function LouvoresTab({
                                   <button
                                     key={track.id}
                                     onClick={() => handlePlayTrack(track)}
-                                    className="w-full p-2.5 rounded-none border border-[#e8e4da] hover:border-[#0e5c3e] bg-white hover:bg-[#f4efe4]/50 transition flex items-center justify-between group text-left shadow-2xs"
+                                    disabled={!track.audioUrl}
+                                    className="w-full p-2.5 rounded-none border border-[#e8e4da] hover:border-[#0e5c3e] bg-white hover:bg-[#f4efe4]/50 transition flex items-center justify-between group text-left shadow-2xs disabled:opacity-50 disabled:cursor-not-allowed"
                                   >
                                     <div className="flex items-center gap-2.5 min-w-0 pr-2">
                                       <div className="w-7 h-7 rounded-none bg-[#012513] text-amber-400 flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition">
@@ -486,7 +488,7 @@ export default function LouvoresTab({
                                     </div>
 
                                     <span className="text-[10px] font-mono text-slate-400 shrink-0">
-                                      {track.duration}
+                                      {!track.audioUrl ? (selectedLanguage === 'en' ? 'Unavailable' : selectedLanguage === 'es' ? 'No disponible' : 'Indisponível') : track.duration}
                                     </span>
                                   </button>
                                 );

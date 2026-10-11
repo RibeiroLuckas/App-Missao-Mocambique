@@ -290,7 +290,7 @@ export default function App() {
   // All tracks across all 4 Bible volumes
   const allBibleTracks = useMemo(() => {
     const volumes = getLocalizedBibleVolumes(selectedLanguage);
-    return volumes.flatMap(v => v.tracks);
+    return volumes.flatMap(v => v.tracks).filter(track => track.audioUrl);
   }, [selectedLanguage]);
 
   // Index of currently playing track
@@ -312,7 +312,8 @@ export default function App() {
           setIsPlaying(true);
         }).catch(err => {
           console.warn(err);
-          setIsPlaying(true);
+          setIsPlaying(false);
+          showToast("Não foi possível reproduzir este áudio.");
         });
       }
     }, 150);
@@ -321,6 +322,7 @@ export default function App() {
 
   // Play a specific BibleTrack object
   const playTrackByObject = (track: BibleTrack) => {
+    if (!track.audioUrl) return;
     const trackNumStr = track.trackNumber < 10 ? `0${track.trackNumber}` : `${track.trackNumber}`;
     const passage: JesusPassage = {
       id: track.id,
@@ -329,9 +331,9 @@ export default function App() {
       description: `${t('louvores_vol_label', selectedLanguage)} ${track.volumeId} • ${track.reference}`,
       bibleText: `${track.title} (${track.reference})`,
       audioUrls: {
-        pt: track.audioUrl || "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-        pt_PT: track.audioUrl || "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
-        en: track.audioUrl || "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+        pt: track.audioUrl,
+        pt_PT: track.audioUrl,
+        en: track.audioUrl
       },
       duration: track.duration || "4:00",
       image: VOLUME_IMAGES[track.volumeId] || volume1Img
