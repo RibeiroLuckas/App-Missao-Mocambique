@@ -1,0 +1,3 @@
+# Authentication is validated explicitly with auth.getUser in the function.
+[functions.developer-help]
+verify_jwt = false

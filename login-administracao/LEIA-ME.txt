@@ -1,0 +1,32 @@
+PACOTE DE LOGIN E ADMINISTRAÇÃO — MISSÃO MOÇAMBIQUE
+
+Este ZIP contém somente os arquivos novos/alterados para integrar login Google, administração de fotos, missões e projetos, gestão de e-mails autorizados e ajuda ao desenvolvedor. Não é um site independente e não contém as mídias do app.
+
+Base do projeto usada: bb5a98f441761619cee076559a49be1cd2e7406c
+
+OPÇÃO RECOMENDADA — APLICAR O PATCH
+1. Faça backup do seu projeto e preserve suas alterações locais.
+2. Extraia este ZIP fora do projeto.
+3. No terminal, na raiz do projeto original, execute:
+   git apply --check /caminho/para/login.patch
+4. Se a checagem passar, execute:
+   git apply /caminho/para/login.patch
+5. Execute pnpm install --frozen-lockfile.
+6. Siga ADMINISTRACAO.md para criar/configurar Supabase, provedor Google, migração SQL e envio de e-mail via Resend.
+7. Configure VITE_SUPABASE_URL e VITE_SUPABASE_ANON_KEY em .env.local (desenvolvimento) e na hospedagem antes do build.
+8. Execute pnpm run lint, pnpm run test:admin e pnpm run build. Os testes de interface exigem Chromium instalado ou BROWSER_PATH configurado. Publique o novo dist.
+
+ALTERNATIVA — ARQUIVOS COMPLETOS
+A pasta arquivos/ contém os arquivos novos e as versões completas dos arquivos alterados, com os caminhos originais. Compare/mescle com seu projeto se ele tiver alterações. Não aplique o patch e depois sobrescreva os mesmos arquivos. Preserve seu .env e configurações locais.
+
+ADMINISTRADORES INICIAIS
+eliane.rios@innovatsolution.com
+gabriel@innovatsolution.com
+lucas.ribeiro.araujo000@gmail.com
+
+O app é público. Login fica em Mais. Só administradores editam e gerenciam acessos; pedidos de ajuda exigem login Google e vão para gabriel@innovatsolution.com.
+
+O login real e o envio de e-mail só funcionarão após configurar os serviços. Nenhuma credencial privada foi incluída. A migração preserva o projeto e as quatro fotos originais, usando os assets já existentes no app.
+
+VERIFICAÇÃO DESTA ENTREGA
+O patch foi aplicado em uma cópia dos arquivos originais e o resultado foi comparado byte a byte com os arquivos atuais.
